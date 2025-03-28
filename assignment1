@@ -1,0 +1,24 @@
+// 定義腳位
+const int mercurySwitchPin = 2; // 水銀開關連接到 D2
+const int ledPin = 13;          // LED 連接到 D13
+const int relayPin = 7;        // 繼電器模組連接到 D12（可選）
+
+void setup() {
+  pinMode(mercurySwitchPin, INPUT); // 設定水銀開關為輸入
+  pinMode(ledPin, OUTPUT);          // 設定 LED 為輸出
+  pinMode(relayPin, OUTPUT);        // 設定繼電器為輸出（可選）
+  digitalWrite(ledPin, LOW);        // 初始化 LED 關閉
+  digitalWrite(relayPin, LOW);      // 初始化繼電器關閉（可選）
+}
+
+void loop() {
+  int switchState = digitalRead(mercurySwitchPin); // 讀取水銀開關狀態
+
+  if (switchState == HIGH) { // 如果水銀開關被觸發（傾斜或翻轉）
+    digitalWrite(ledPin, HIGH);  // 開啟 LED
+    digitalWrite(relayPin, HIGH); // 開啟繼電器（可選）
+  } else {
+    digitalWrite(ledPin, LOW);   // 關閉 LED
+    digitalWrite(relayPin, LOW); // 關閉繼電器（可選）
+  }
+}
