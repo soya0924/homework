@@ -1,7 +1,7 @@
 // 定義腳位
 const int mercurySwitchPin = 2; // 水銀開關連接到 D2
 const int ledPin = 13;          // LED 連接到 D13
-const int relayPin = 7;        // 繼電器模組連接到 D12（可選）
+const int relayPin = 7;        // 繼電器模組連接到 D7（可選）
 
 void setup() {
   pinMode(mercurySwitchPin, INPUT); // 設定水銀開關為輸入

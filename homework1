@@ -1,0 +1,23 @@
+const int mercurySwitch=2;
+const int ledPin=13;
+const int relayPin=7;
+
+void setup(){
+  pinMode(mercurySwitch,INPUT_PULLUP);
+  pinMode(ledPin, OUTPUT);
+  pinMode(relayPin, OUTPUT);
+}
+
+void loop(){
+  int state = digitalRead(mercurySwitch);
+
+  if (state == LOW){
+    digitalWrite(ledPin, HIGH);
+    digitalWrite(relayPin, HIGH);
+  } else{
+    digitalWrite(ledPin, LOW);
+    digitalWrite(relayPin, LOW);
+  }
+
+  delay(100);
+}
